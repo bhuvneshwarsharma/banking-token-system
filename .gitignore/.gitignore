@@ -1,0 +1,20 @@
+# .gitignore
+
+# logs
+/logs
+
+# "temporary" build files
+/target
+/out
+
+*.iml
+.idea/
+.gradle/
+build/
+
+.project
+.settings
+.classpath
+
+!.gitignore
+*.jar
