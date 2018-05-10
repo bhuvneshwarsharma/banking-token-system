@@ -28,3 +28,15 @@ When application is up then access url 'localhost:8080/bank/dummyData' which wil
 - Click `Next`
 - Point the `Gradle Project` option to `build.gradle`
 - Click `Finish`
+
+
+### APIs to use
+'URL End Point' - 'Method Type' - 'Query Param' - 'Description'
+'/dummyData' - 'GET' : It will create dummy data for application to work
+'/customer/$phoneNumber'  - 'GET' - It will return customer details 
+'/customer' - 'POST' - It will create customer in db. Need to send attributes like name,phoneNumber,address,serviceType
+'/token' - 'POST' - it will generate token for customer if exist with given phone no. Attributes - phoneNumber,branchName,multi
+'/token' - 'PUT' - It will process token. Attributes like counterName,branchName
+'/serviceCounter' - 'GET' - Return all service acounters list
+'/serviceCounter/$counterName/tokens' - 'GET' - return all tokens for service counter
+
