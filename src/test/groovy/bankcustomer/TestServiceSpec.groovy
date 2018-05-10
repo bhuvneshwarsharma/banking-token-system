@@ -1,18 +1,29 @@
 package bankcustomer
 
-import grails.testing.services.ServiceUnitTest
-import spock.lang.Specification
+import grails.test.mixin.TestMixin
+import grails.test.mixin.services.ServiceUnitTestMixin
 
-class TestServiceSpec extends Specification implements ServiceUnitTest<TestService>{
 
+@TestMixin(ServiceUnitTestMixin)
+class TestServiceSpec extends HelperSpec{
+
+    def testService
     def setup() {
+        testService = testFor(TestService)
     }
 
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "Should create dummy data"() {
+
+        assert Bank.count() == 0
+        assert Branch.count() == 0
+        assert ServiceCounter.count() == 0
+        given:
+        testService.createBankDummyData()
+
+        expect: "New Banks to be created"
+        assert Bank.count() == 1
     }
 }

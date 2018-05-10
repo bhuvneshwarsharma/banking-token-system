@@ -17,6 +17,7 @@ dependencies:
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/com.bertramlabs.plugins/asset-pipeline-grails/2.14.2/78d9651f5fc3dee1fce57cd5b01a18f9e53486b0/asset-pipeline-grails-2.14.2.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.grails/grails-gorm-testing-support/1.0.0/4ac8aa2a1a43a55c35baa2d0395d27b4d48d98e/grails-gorm-testing-support-1.0.0.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.grails.plugins/geb/1.1.1/f041942fec76be4f7dc8616a2a85e3cd403a5e4/geb-1.1.1.jar
+- file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/com.github.fakemongo/fongo/2.0.10/ee14cb58c3782e0ad38f75aa418ecd8a68435d5e/fongo-2.0.10.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.grails/grails-web-testing-support/1.0.0/87dd88d69d5e2142f7656c013cb58d22559d61c4/grails-web-testing-support-1.0.0.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-htmlunit-driver/2.47.1/e4a31a8f8c8a36074a506449c1b476af86de4a58/selenium-htmlunit-driver-2.47.1.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/net.sourceforge.htmlunit/htmlunit/2.18/ec30f76601f7010abbc09cc8ec401cb183916371/htmlunit-2.18.jar
@@ -66,6 +67,9 @@ dependencies:
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.grails/grails-testing-support/1.0.0/36e5f41e844c0734990966740e6feb4aa0ff8ff1/grails-testing-support-1.0.0.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.gebish/geb-spock/1.1.1/a0df68183a63b505efd6c5f1eaa794cd14b39223/geb-spock-1.1.1.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-support/2.53.1/af951906201e898e1d35a9ff63b297bb633d1d03/selenium-support-2.53.1.jar
+- file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.mozilla/rhino/1.7.7.1/2e8f8ebc42e5df8bcef5c78dd44387176c9aa98e/rhino-1.7.7.1.jar
+- file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/com.vividsolutions/jts/1.13/3ccfb9b60f04d71add996a666ceb8902904fd805/jts-1.13.jar
+- file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/de.grundid.opendatalab/geojson-jackson/1.2/a476d2adaf8e975d749a3009412dd470664cab07/geojson-jackson-1.2.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.grails/grails-plugin-interceptors/3.3.0/9864d7565f9623c76a0daafafe0ca45ca31cd46d/grails-plugin-interceptors-3.3.0.jar
 - file:/home/bhuvneshwars/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-remote-driver/2.53.1/5b049195915b0120259a063db049e1ffa874550e/selenium-remote-driver-2.53.1.jar
@@ -120,6 +124,7 @@ dependencies:
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.spockframework/spock-core/1.1-groovy-2.4/1c42014d4a18995d5d4aa10a4e060e88f60fdf78/spock-core-1.1-groovy-2.4.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.gebish/geb-core/1.1.1/ab0c741896e76732b3c7b457a1884a1fbbaf04a9/geb-core-1.1.1.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.gebish/geb-test-common/1.1.1/9045f893ff868f68a5df03a67f822b4d2bc4baa7/geb-test-common-1.1.1.jar
+- file:/home/bhuvneshwars/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.8.8/jackson-core-2.8.8.jar
 - file:/home/bhuvneshwars/.m2/repository/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.0/c4ba5371a29ac9b2ad6129b1d39ea38750043eff/gson-2.8.0.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-api/2.53.1/b00ff9f84bfa214fda742c1287a06d447e92910e/selenium-api-2.53.1.jar
@@ -136,7 +141,6 @@ dependencies:
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty.websocket/websocket-common/9.4.5.v20170502/2a385e7b044a1832efa4cf98bc1ea326fa0804c2/websocket-common-9.4.5.v20170502.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/commons-validator/commons-validator/1.5.1/86d05a46e8f064b300657f751b5a98c62807e2a0/commons-validator-1.5.1.jar
 - file:/home/bhuvneshwars/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0.jar
-- file:/home/bhuvneshwars/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.8.8/jackson-core-2.8.8.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-json/2.4.11/98b01ddd7811e27b8bb7900e3ea029d86f243e10/groovy-json-2.4.11.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.grails/grails-taglib/3.3.0/38a8e5db6edc038642399f0b01268647f50e8acf/grails-taglib-3.3.0.jar
 - file:/home/bhuvneshwars/.gradle/caches/modules-2/files-2.1/org.grails/grails-web-taglib/3.3.0/7605089e33d591b25afdbb342c4babe332cda23f/grails-web-taglib-3.3.0.jar

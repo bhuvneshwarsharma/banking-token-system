@@ -51,9 +51,13 @@ dependencies {
 
     testCompile "org.grails:grails-gorm-testing-support"
     testCompile "org.grails.plugins:geb"
+    testCompile 'com.github.fakemongo:fongo:2.0.10'
     testCompile "org.grails:grails-web-testing-support"
     testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+
+    testCompile "org.grails:grails-plugin-testing"
+    testCompile 'org.grails:grails-datastore-gorm-test'
 }
 
 bootRun {
