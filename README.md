@@ -13,6 +13,7 @@ In order to get started you need the following:
 
 ### Setting up Database
 Create db with name 'bank', user 'testUser' and password 'password'
+
 When application is up then access url 'localhost:8080/bank/dummyData' which will create dummy data in mongo db like for Bank, Bank Branches, Service Counters .
 
 ### Setting up IntelliJ
