@@ -15,6 +15,10 @@ class TokenService {
         if(customer) {
 
             def branch = Branch.findByBranchName(branchName)
+
+            if(!branch) {
+                return "Please provide valid branch name."
+            }
             List<ServiceCounter> serviceCounters = ServiceCounter.findAllByBranchAndCounterType(branch, customer.serviceType)
 
             def token = new CustomerToken(tokenNumber: 1, status: "CREATED", currDate: new Date())

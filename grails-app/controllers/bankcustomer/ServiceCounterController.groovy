@@ -4,11 +4,19 @@ class ServiceCounterController {
 
     def serviceCounterService
 
-    def serviceCounterList() {
+    /**
+     * This method will return list of service counters list
+     * @return list
+     */
+    def getServiceCounterList() {
 
         render serviceCounterService.getServiceCounterList()
     }
 
+    /**
+     * This method will return list of tokens for service counters
+     * @return list
+     */
     def getTokensForServiceCounter() {
 
         String serviceCounterName = params.counterName

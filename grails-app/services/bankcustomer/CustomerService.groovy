@@ -12,6 +12,12 @@ class CustomerService {
         customer? customer as JSON : null
     }
 
+    def getCustomerList() {
+
+        def customerList = Customer.findAll()
+        customerList as JSON
+    }
+
     def createCustomer(def customer) {
 
         customer.save()

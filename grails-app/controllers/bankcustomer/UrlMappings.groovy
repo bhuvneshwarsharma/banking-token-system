@@ -12,29 +12,44 @@ class UrlMappings {
         "/"(controller: 'home')
         "/index"(controller: 'home')
 
+        "/serviceCounter"(controller: 'serviceCounter') {
+            action = [
+                    GET: "getServiceCounterList"
+            ]
+        }
+
+        "/serviceCounter/$counterName/tokens"(controller: 'serviceCounter') {
+            action = [
+                    GET: "getTokensForServiceCounter"
+            ]
+        }
+
         "/dummyData"(controller: 'test') {
             action = [
                     GET: "createBankDummyData"
             ]
         }
 
+        "/customer/$phoneNumber"(controller: 'customer') {
+            action = [
+                    GET: "getCustomer"
+            ]
+        }
+
         "/customer"(controller: 'customer') {
             action = [
-                    GET: "getCustomer",
+                    GET: "getCustomerList",
                     POST: "CreateCustomer"
             ]
         }
 
-        "/token/generate"(controller: 'token') {
+        "/token"(controller: 'token') {
             action = [
-                    GET: "generateToken"
+                    POST: "generateToken",
+                    PUT: "processTokenOnCounter"
             ]
         }
-        "/token/process"(controller: 'token') {
-            action = [
-                    GET: "processTokenOnCounter"
-            ]
-        }
+
 
         "/"(view:"/index")
         "500"(view:'/error')

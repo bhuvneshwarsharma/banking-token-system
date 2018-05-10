@@ -4,6 +4,10 @@ class CustomerController {
 
     def customerService
 
+    /**
+     * This method will return customer details for given phone number
+     * @return customer data
+     */
     def getCustomer() {
 
         def phoneNumber = params.phoneNumber
@@ -11,6 +15,20 @@ class CustomerController {
         render customer? customer : "Customer does not exist with this phone number"
     }
 
+    /**
+     * This method will return list of customers
+     * @return customerList
+     */
+    def getCustomerList() {
+
+        def customerList = customerService.getCustomerList()
+        render customerList
+    }
+
+    /**
+     * This method will return create customer in db
+     * @return message
+     */
     def CreateCustomer() {
 
         try {
