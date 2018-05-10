@@ -1,0 +1,36 @@
+@startuml
+
+class Bank extends DS.Model {
+    +String name
+    +ProductType productType
+}
+
+class Branch extends DS.Model {
+    +String branchName
+    +String ifscCode
+}
+
+class ServiceCounter extends DS.Model {
+    +String name
+    +String counterType
+}
+
+class Customer extends DS.Model {
+    +String name
+    +String  phoneNumber
+    +String  address
+    +String  serviceType
+}
+
+class CustomerToken extends DS.Model {
+    +Integer tokenNumber
+    +Date currDate
+    +String status
+    +ServiceCounter nextServiceCounter
+}
+
+Bank -> Branch
+Branch -> ServiceCounter
+ServiceCounter <-> CustomerToken
+Customer <-> CustomerToken
+@enduml
