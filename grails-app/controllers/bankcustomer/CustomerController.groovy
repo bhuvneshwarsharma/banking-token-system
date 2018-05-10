@@ -1,5 +1,9 @@
 package bankcustomer
 
+import grails.converters.JSON
+import grails.validation.ValidationException
+import org.grails.web.converters.exceptions.ConverterException
+
 class CustomerController {
 
     def customerService
@@ -43,8 +47,21 @@ class CustomerController {
             customerService.createCustomer(customer)
             render "Customer is created successfully"
 
+        }  catch(ValidationException ve) {
+
+            log.error(ve.getMessage())
+            response.status = 500
+            render ([error:"Constraints are failing for field's value of new customer"]) as JSON
+        } catch(ConverterException ce) {
+
+            log.error(ce.getMessage())
+            response.status = 500
+            render ([error:"Error while converting json data to create new customer"]) as JSON
         } catch(Exception e) {
-            render "Facing issue while creating customer : \n\n"+e.getMessage()
+
+            log.error(e.getMessage())
+            response.status = 500
+            render ([error:"Facing issue while creating customer"]) as JSON
         }
     }
 }

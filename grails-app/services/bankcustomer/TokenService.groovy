@@ -8,7 +8,6 @@ class TokenService {
 
     def customerService
 
-    // TODO : Remove hardcoded values
     def generateToken(phoneNumber, branchName, multiCounter) {
 
         def customer = Customer.findByPhoneNumber(phoneNumber)
@@ -21,7 +20,8 @@ class TokenService {
             }
             List<ServiceCounter> serviceCounters = ServiceCounter.findAllByBranchAndCounterType(branch, customer.serviceType)
 
-            def token = new CustomerToken(tokenNumber: 1, status: "CREATED", currDate: new Date())
+            Long tokenNo = CustomerToken.createCriteria().get {projections {max "tokenNumber"}} as Long
+            def token = new CustomerToken(tokenNumber: tokenNo+1, status: "CREATED", currDate: new Date())
 
             serviceCounters.sort {
                 serviceCounter ->

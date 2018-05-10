@@ -9,6 +9,10 @@ class TokenProcessor {
 
     static Map<String, PriorityQueue<CustomerToken>> tokenTaskList= new HashMap<String, PriorityQueue<CustomerToken>>()
 
+    /**
+     * This method will add customer token to task queue
+     * @param token
+     */
     public static void addTokenToQueue(CustomerToken token) {
 
         String keyName = "${token.nextServiceCounter.branch.branchName}-${token.nextServiceCounter.name}"
@@ -20,6 +24,11 @@ class TokenProcessor {
         tokenTaskList.put(keyName, queue)
     }
 
+    /**
+     * This method will process token and will remove from task queue
+     * @param keyName
+     * @return token
+     */
     public static CustomerToken processToken(String keyName) {
 
         PriorityQueue<CustomerToken> queue = tokenTaskList.get(keyName)
