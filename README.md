@@ -37,13 +37,13 @@ When application is up then access url 'localhost:8080/bank/dummyData' which wil
 
 '/customer/$phoneNumber'  - 'GET' - It will return customer details 
 
-'/customer' - 'POST' - It will create customer in db. Need to send attributes like name,phoneNumber,address,serviceType
+'/customer' - 'POST' - It will create customer in db. Need to send attributes like name,phoneNumber,address,serviceType (service type can be either 'premium' or 'regular')
 
-'/token' - 'POST' - it will generate token for customer if exist with given phone no. Attributes - phoneNumber,branchName,multi
+'/token' - 'POST' - it will generate token for customer if exist with given phone no. Attributes - phoneNumber,branchName,multi (multi is boolean flag to decide to assign single counter or multiple to token)
 
 '/token' - 'PUT' - It will process token. Attributes like counterName,branchName
 
-'/serviceCounter' - 'GET' - Return all service acounters list
+'/serviceCounter' - 'GET' - Return all service counters list
 
 '/serviceCounter/$counterName/tokens' - 'GET' - return all tokens for service counter
 
