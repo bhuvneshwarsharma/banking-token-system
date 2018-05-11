@@ -2,6 +2,7 @@ buildscript {
     repositories {
         mavenLocal()
         maven { url "https://repo.grails.org/grails/core" }
+        maven { url "https://dl.bintray.com/ajay-kumar/plugins" }
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
@@ -23,6 +24,7 @@ apply plugin:"org.grails.grails-gsp"
 repositories {
     mavenLocal()
     maven { url "https://repo.grails.org/grails/core" }
+    maven { url "https://dl.bintray.com/ajay-kumar/plugins" }
 }
 
 dependencies {
@@ -35,6 +37,8 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-actuator"
     provided "org.springframework.boot:spring-boot-starter-tomcat"
 
+    compile 'org.grails.plugins:swagger:1.0.0'
+    compile "org.hibernate:hibernate-validator:5.2.4.Final"
     compile 'org.yaml:snakeyaml:1.14'
 
     compile "org.grails:grails-core"

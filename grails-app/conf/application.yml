@@ -108,12 +108,12 @@ swagger:
     title: "Bank API Documentation"
     termsOfServices: ""
     contact:
-      name: "Bank"
-      url: "http://www.abcbank.com"
-      email: "developer@abcbank.com"
+      name: ""
+      url: ""
+      email: ""
     license:
-      name: "Licence Under ABC Bank"
-      url: "http://www.abcbank.com"
+      name: ""
+      url: ""
     schemes:
       - Scheme.HTTP
     consumes:
