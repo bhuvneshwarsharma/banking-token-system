@@ -1,9 +1,7 @@
 package bankcustomer
 
 import grails.converters.JSON
-import grails.gorm.transactions.Transactional
 
-@Transactional
 class ServiceCounterService {
 
     def getServiceCounterList() {
@@ -14,7 +12,7 @@ class ServiceCounterService {
 
     def getTokensForServiceCounter(String name) {
 
-        def customerTokens = CustomerToken.findByServiceCounter(name)
-        customerTokens as JSON
+        def customerTokens = ServiceCounter.findByName(name)?.customerToken
+        customerTokens? customerTokens as JSON : null
     }
 }

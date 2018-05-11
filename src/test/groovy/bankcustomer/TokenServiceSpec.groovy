@@ -1,9 +1,11 @@
 package bankcustomer
 
-import grails.testing.services.ServiceUnitTest
+//import grails.test.mixin.TestFor
+//import grails.testing.services.ServiceUnitTest
 import spock.lang.Specification
 
-class TokenServiceSpec extends Specification implements ServiceUnitTest<TokenService>{
+//@TestFor(TokenService)
+class TokenServiceSpec extends Specification {
 
     def setup() {
     }

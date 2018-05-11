@@ -1,9 +1,7 @@
 package bankcustomer
 
-import grails.gorm.transactions.Transactional
 import Bank.Token.TokenProcessor
 
-@Transactional
 class TokenService {
 
     def customerService

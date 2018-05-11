@@ -14,9 +14,24 @@ class CustomerController {
      */
     def getCustomer() {
 
-        def phoneNumber = params.phoneNumber
-        def customer = customerService.getCustomer(phoneNumber)
-        render customer? customer : "Customer does not exist with this phone number"
+        try{
+
+            def phoneNumber = params.phoneNumber
+            def customer = customerService.getCustomer(phoneNumber)
+
+            if(!customer) {
+                response.status = 404
+                render ([error:"Customer is not registered for this phoneNumber"]) as JSON
+            } else {
+                render customer
+            }
+
+        } catch(Exception e) {
+
+            log.error(e.getMessage())
+            response.status = 500
+            render ([error:"Error while fetching customer details"]) as JSON
+        }
     }
 
     /**

@@ -1,9 +1,7 @@
 package bankcustomer
 
 import grails.converters.JSON
-import grails.gorm.transactions.Transactional
 
-@Transactional
 class CustomerService {
 
     def getCustomer(def phoneNumber) {
@@ -20,6 +18,6 @@ class CustomerService {
 
     def createCustomer(def customer) {
 
-        customer.save()
+        customer.save(failOnError: true)
     }
 }

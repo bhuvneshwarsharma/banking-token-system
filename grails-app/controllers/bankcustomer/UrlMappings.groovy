@@ -50,6 +50,7 @@ class UrlMappings {
             ]
         }
 
+        "/apidoc/$action?/$id?"(controller: "apiDoc", action: "getDocuments")
 
         "/"(view:"/index")
         "500"(view:'/error')

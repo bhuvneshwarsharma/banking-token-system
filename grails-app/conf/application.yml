@@ -101,6 +101,24 @@ dataSource:
     username: sa
     password: ''
 
+swagger:
+  info:
+    description: "Swagger API Documentation for Bank Application"
+    version: "0.1"
+    title: "Bank API Documentation"
+    termsOfServices: ""
+    contact:
+      name: "Bank"
+      url: "http://www.abcbank.com"
+      email: "developer@abcbank.com"
+    license:
+      name: "Licence Under ABC Bank"
+      url: "http://www.abcbank.com"
+    schemes:
+      - Scheme.HTTP
+    consumes:
+      - "application/json"
+
 #environments:
 #    development:
 #        dataSource:

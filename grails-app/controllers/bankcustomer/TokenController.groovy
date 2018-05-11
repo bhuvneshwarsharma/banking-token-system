@@ -46,7 +46,7 @@ class TokenController {
      * service counter queue if it needs
      * @return message
      */
-    def processTokenOnCounter() {
+        def processTokenOnCounter() {
 
         try {
 
