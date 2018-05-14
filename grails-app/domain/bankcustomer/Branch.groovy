@@ -1,12 +1,15 @@
 package bankcustomer
 
+import bankcustomer.ServiceCounter
+
 class Branch {
 
-    static hasMany = [books: ServiceCounter]
+    static hasMany = [serviceCounters: ServiceCounter]
     static belongsTo = [bank: Bank]
 
     String ifscCode
     String branchName
+//    Set<ServiceCounter> serviceCounters
 
     static mapWith = "mongo"
 

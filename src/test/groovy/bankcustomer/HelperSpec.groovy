@@ -1,5 +1,7 @@
 package bankcustomer
 
+import bankcustomer.ServiceCounter.IServiceCounter
+
 /**
  * Created by bhuvneshwars on 10/5/18.
  */
@@ -10,7 +12,7 @@ import grails.test.mongodb.MongoSpec
 class HelperSpec extends MongoSpec {
 
     List<Class> getDomainClasses() {
-        [Bank, Branch, ServiceCounter, Customer, CustomerToken]
+        [Bank, Branch, IServiceCounter, Customer, CustomerToken]
     }
 
     MongoClient createMongoClient() {

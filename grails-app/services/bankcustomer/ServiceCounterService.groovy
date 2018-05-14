@@ -6,13 +6,13 @@ class ServiceCounterService {
 
     def getServiceCounterList() {
 
-        def serviceCounters = ServiceCounter.findAll()
+        def serviceCounters = bankcustomer.ServiceCounter.findAll()
         serviceCounters as JSON
     }
 
     def getTokensForServiceCounter(String name) {
 
-        def customerTokens = ServiceCounter.findByName(name)?.customerToken
+        def customerTokens = bankcustomer.ServiceCounter.findByName(name)?.customerToken
         customerTokens? customerTokens as JSON : null
     }
 }

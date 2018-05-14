@@ -1,5 +1,6 @@
 package bankcustomer
 
+import bankcustomer.constant.EntityType
 import grails.testing.services.ServiceUnitTest
 
 class CustomerServiceSpec extends HelperSpec implements ServiceUnitTest<CustomerService>{

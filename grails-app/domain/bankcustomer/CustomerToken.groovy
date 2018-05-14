@@ -3,14 +3,13 @@ package bankcustomer
 
 class CustomerToken {
 
-    static hasMany = [serviceCounter: ServiceCounter]
-    static belongsTo = [customer: Customer, serviceCounter: ServiceCounter]
-    static mappedBy = [serviceCounter : 'customerToken']
+    static belongsTo = [customer: Customer]
 
     Integer tokenNumber
     Date currDate
     String status
-    ServiceCounter nextServiceCounter
+    String serviceType
+//    Customer customer
 
     static mapWith = "mongo"
 

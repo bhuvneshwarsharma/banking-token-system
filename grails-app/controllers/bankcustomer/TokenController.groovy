@@ -53,10 +53,9 @@ class TokenController {
         try {
 
             def phoneNumber = request.JSON.phoneNumber
-            def branchName = request.JSON.branchName
-            boolean multiCounter = request.JSON.multi as Boolean
+            def serviceType = request.JSON.serviceType
 
-            def message = tokenService.generateToken(phoneNumber, branchName, multiCounter)
+            def message = tokenService.generateToken(phoneNumber, serviceType)
             render message
 
         } catch(ValidationException ve) {
@@ -84,7 +83,7 @@ class TokenController {
      */
     @ApiOperation(
             value = 'Process Token',
-            nickname = 'users',
+            nickname = 'token',
             produces = 'application/json',
             consumes = 'application/json',
             httpMethod = 'PUT'
@@ -110,8 +109,7 @@ class TokenController {
         try {
 
             def counterName = request.JSON.counterName
-            def branchName = request.JSON.branchName
-            def message = tokenService.processToken(branchName, counterName)
+            def message = tokenService.processToken(counterName)
 
             render message
 

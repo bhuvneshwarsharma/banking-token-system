@@ -3,17 +3,18 @@ package bankcustomer
 class ServiceCounter {
 
     static belongsTo = [branch: Branch]
-    static hasMany = [customerToken: CustomerToken]
-    static mappedBy = [customerToken: 'serviceCounter']
 
     String name
-    String counterType
+    String serviceType  // Which service provides like deposit, withdraw, enquiery etc.
+    String counterType  // Which customer type serve like premium, regular
+//    Branch branch
 
     static mapWith = "mongo"
 
     static constraints = {
 
-        name (required: true, nullable: false, maxSize: 100)
+        name (unique: true, required: true, nullable: false, maxSize: 100)
+        serviceType (required: true, nullable: false, maxSize: 100)
         counterType (required: true, nullable: false, maxSize: 100)
     }
 }

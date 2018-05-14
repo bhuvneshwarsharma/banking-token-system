@@ -1,5 +1,8 @@
 package bankcustomer
 
+import bankcustomer.constant.EntityType
+import bankcustomer.constant.ServiceType
+
 class TestService {
 
     def createBankDummyData() {
@@ -17,21 +20,33 @@ class TestService {
         def bank = createBank()
         def branches = createBankBranches(bank)
 
-        ServiceCounter s1 = new ServiceCounter(branch: branches[0], name: "S1", counterType: EntityType.PREMIUM)
+        ServiceCounter.IServiceCounter s1 = new ServiceCounter.IServiceCounter(branch: branches[0], name: "D1", serviceType:ServiceType.DEPOSIT, counterType: EntityType.PREMIUM)
         s1.save()
-        ServiceCounter s2 = new ServiceCounter(branch: branches[0], name: "S2", counterType: EntityType.PREMIUM)
+        ServiceCounter.IServiceCounter s2 = new ServiceCounter.IServiceCounter(branch: branches[0], name: "D2", serviceType:ServiceType.DEPOSIT, counterType: EntityType.REGULAR)
         s2.save()
-        ServiceCounter s3 = new ServiceCounter(branch: branches[0], name: "S3", counterType: EntityType.REGULAR)
+        ServiceCounter.IServiceCounter s3 = new ServiceCounter.IServiceCounter(branch: branches[0], name: "D3", serviceType:ServiceType.DEPOSIT, counterType: EntityType.REGULAR)
         s3.save()
-        ServiceCounter s4 = new ServiceCounter(branch: branches[0], name: "S4", counterType: EntityType.REGULAR)
+        ServiceCounter.IServiceCounter s4 = new ServiceCounter.IServiceCounter(branch: branches[0], name: "W1", serviceType:ServiceType.WITHDRAW, counterType: EntityType.PREMIUM)
         s4.save()
-        ServiceCounter s5 = new ServiceCounter(branch: branches[0], name: "S5", counterType: EntityType.REGULAR)
+        ServiceCounter.IServiceCounter s5 = new ServiceCounter.IServiceCounter(branch: branches[0], name: "W2", serviceType:ServiceType.WITHDRAW, counterType: EntityType.REGULAR)
         s5.save()
+        ServiceCounter.IServiceCounter s6 = new ServiceCounter.IServiceCounter(branch: branches[0], name: "W3", serviceType:ServiceType.WITHDRAW, counterType: EntityType.REGULAR)
+        s6.save()
+        ServiceCounter.IServiceCounter s7 = new ServiceCounter.IServiceCounter(branch: branches[0], name: "A1", serviceType:ServiceType.ACCOUNT, counterType: EntityType.PREMIUM)
+        s7.save()
+        ServiceCounter.IServiceCounter s8 = new ServiceCounter.IServiceCounter(branch: branches[0], name: "A2", serviceType:ServiceType.ACCOUNT, counterType: EntityType.REGULAR)
+        s8.save()
+        ServiceCounter.IServiceCounter s9 = new ServiceCounter.IServiceCounter(branch: branches[0], name: "E1", serviceType:ServiceType.ENQUIERY, counterType: EntityType.REGULAR)
+        s9.save()
 
-        ServiceCounter s11 = new ServiceCounter(branch: branches[1], name: "S11", counterType: EntityType.REGULAR)
+        ServiceCounter.IServiceCounter s11 = new ServiceCounter.IServiceCounter(branch: branches[1], name: "A11", serviceType:ServiceType.ACCOUNT, counterType: EntityType.REGULAR)
         s11.save()
-        ServiceCounter s12 = new ServiceCounter(branch: branches[1], name: "S12", counterType: EntityType.REGULAR)
+        ServiceCounter.IServiceCounter s12 = new ServiceCounter.IServiceCounter(branch: branches[1], name: "E11", serviceType:ServiceType.ENQUIERY, counterType: EntityType.REGULAR)
         s12.save()
+        ServiceCounter.IServiceCounter s13 = new ServiceCounter.IServiceCounter(branch: branches[0], name: "D11", serviceType:ServiceType.DEPOSIT, counterType: EntityType.REGULAR)
+        s13.save()
+        ServiceCounter.IServiceCounter s14 = new ServiceCounter.IServiceCounter(branch: branches[0], name: "W11", serviceType:ServiceType.WITHDRAW, counterType: EntityType.REGULAR)
+        s14.save()
 
         return true
     }

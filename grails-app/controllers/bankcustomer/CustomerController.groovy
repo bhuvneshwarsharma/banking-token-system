@@ -1,5 +1,6 @@
 package bankcustomer
 
+import bankcustomer.constant.EntityType
 import grails.converters.JSON
 import grails.validation.ValidationException
 import io.swagger.annotations.Api

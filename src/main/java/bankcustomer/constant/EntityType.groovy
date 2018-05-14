@@ -1,4 +1,4 @@
-package bankcustomer
+package bankcustomer.constant
 
 enum EntityType {
 
@@ -12,8 +12,8 @@ enum EntityType {
 
     static String getEntityType(String entityType) {
 
-        def entityTypeObj = entityTypeMap.find { it.key == entityType.toLowerCase() }?.value
-        return entityTypeObj?.toString()
+        def entityTypeObj = entityTypeMap.find { it.key == entityType.toLowerCase() }?.value;
+        return entityTypeObj?.toString();
     }
 
 }

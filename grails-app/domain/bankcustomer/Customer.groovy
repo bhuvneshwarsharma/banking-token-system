@@ -2,12 +2,13 @@ package bankcustomer
 
 class Customer {
 
-    static hasMany = [customerToken: CustomerToken]
+    static hasMany = [customerTokens: CustomerToken]
 
     String  name
     String  phoneNumber
     String  address
-    String  serviceType
+    String  serviceType // it can be premium or regular as defined in EntityType
+//    Set<CustomerToken> customerTokens
 
     static mapWith = "mongo"
 

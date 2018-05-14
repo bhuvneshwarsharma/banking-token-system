@@ -1,13 +1,15 @@
 package Bank.Token
 
 import bankcustomer.CustomerToken
+import bankcustomer.ServiceCounter
+import bankcustomer.constant.ServiceType
+import bankcustomer.counter.IServiceCounter
+import bankcustomer.factory.CounterServiceFactory
 
 /**
  * Created by bhuvneshwars on 8/5/18.
  */
 class TokenProcessor {
-
-    static Map<String, PriorityQueue<CustomerToken>> tokenTaskList= new HashMap<String, PriorityQueue<CustomerToken>>()
 
     /**
      * This method will add customer token to task queue
@@ -15,13 +17,8 @@ class TokenProcessor {
      */
     public static void addTokenToQueue(CustomerToken token) {
 
-        String keyName = "${token.nextServiceCounter.branch.branchName}-${token.nextServiceCounter.name}"
-        PriorityQueue queue = tokenTaskList.get(keyName)
-        if(!queue) {
-            queue = new PriorityQueue<CustomerToken>()
-        }
-        queue.add(token)
-        tokenTaskList.put(keyName, queue)
+        IServiceCounter serviceCounter = CounterServiceFactory.getServiceCounterInstance(ServiceType.getService(token.serviceType))
+        serviceCounter.addTokenToQueue(token)
     }
 
     /**
@@ -29,15 +26,10 @@ class TokenProcessor {
      * @param keyName
      * @return token
      */
-    public static CustomerToken processToken(String keyName) {
+    public static CustomerToken processToken(ServiceCounter counter) {
 
-        PriorityQueue<CustomerToken> queue = tokenTaskList.get(keyName)
-        if(!queue || !queue.size())
-            return null
-
-        CustomerToken token = queue.poll()
-
-        tokenTaskList.put(keyName, queue)
+        IServiceCounter serviceCounter = CounterServiceFactory.getServiceCounterInstance(ServiceType.getService(counter.serviceType))
+        def token = serviceCounter.processToken(counter.counterType)
         return token
     }
 }
