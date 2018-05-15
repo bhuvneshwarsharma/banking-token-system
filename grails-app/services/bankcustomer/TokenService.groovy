@@ -1,6 +1,6 @@
 package bankcustomer
 
-import Bank.Token.TokenProcessor
+import bankcustomer.Token.TokenProcessor
 import bankcustomer.constant.ServiceType
 
 class TokenService {
@@ -13,6 +13,7 @@ class TokenService {
         if(customer) {
 
             Long tokenNo = CustomerToken.createCriteria().get {projections {max "tokenNumber"}} as Long
+            tokenNo = tokenNo?tokenNo:0
             def token = new CustomerToken(tokenNumber: tokenNo+1, serviceType: ServiceType.getserviceType(serviceType), status: "CREATED", currDate: new Date())
 
             token.customer = customer
@@ -20,7 +21,7 @@ class TokenService {
             token.save(failOnError: true)
             TokenProcessor.addTokenToQueue(token)
 
-            return "Generated token successfully. Please go to service counter ${token.nextServiceCounter.name}"
+            return "Token (${token.tokenNumber}) is generated successfully."
 
         } else {
 
@@ -31,21 +32,25 @@ class TokenService {
     def processToken(counterName) {
 
         ServiceCounter counter = ServiceCounter.findByName(counterName)
-        if(counter) {
-            return "Counter ${counter.name} does not exist, Please provide valid name"
+        if(!counter) {
+            return "Counter ${counterName} does not exist, Please provide valid name"
         }
         CustomerToken token = TokenProcessor.processToken(counter)
 
+        if(!token) {
+            return "No token found for ${counter.serviceType} counter ${counterName}"
+        }
+
         def message = "Token (${token.tokenNumber}) is processed at ${counterName} for customer ${token.customer.name}"
 
-        if(token.serviceType.equalsIgnoreCase(ServiceType.ACCOUNT)) {
-            token.serviceType = ServiceType.ENQUIERY
+        if(token.serviceType.equalsIgnoreCase(ServiceType.ACCOUNT.toString())) {
+            token.serviceType = ServiceType.ENQUIERY.toString()
             token.status = "IN PROGRESS"
             token.save(failOnError: true)
 
-            message = "${message} and next counter is ${ServiceType.ENQUIERY}"
+            message = "${message} and next counter is ${token.serviceType}"
 
-            addTokenToQueue(token)
+            TokenProcessor.addTokenToQueue(token)
         } else{
 
             token.status = "COMPLETED"

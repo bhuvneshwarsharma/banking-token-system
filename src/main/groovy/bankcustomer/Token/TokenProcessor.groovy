@@ -1,4 +1,4 @@
-package Bank.Token
+package bankcustomer.Token
 
 import bankcustomer.CustomerToken
 import bankcustomer.ServiceCounter

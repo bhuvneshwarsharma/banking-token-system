@@ -18,7 +18,7 @@ class UrlMappings {
             ]
         }
 
-        "/serviceCounter/$counterName/tokens"(controller: 'serviceCounter') {
+        "/serviceCounter/$serviceType/tokens"(controller: 'serviceCounter') {
             action = [
                     GET: "getTokensForServiceCounter"
             ]

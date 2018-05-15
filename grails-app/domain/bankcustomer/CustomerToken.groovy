@@ -9,14 +9,12 @@ class CustomerToken {
     Date currDate
     String status
     String serviceType
-//    Customer customer
 
     static mapWith = "mongo"
 
     static constraints = {
 
-        //unique: true,
-        tokenNumber (required: true, nullable: false)
+        tokenNumber (unique: true, required: true, nullable: false)
     }
 
     def beforeInsert() {

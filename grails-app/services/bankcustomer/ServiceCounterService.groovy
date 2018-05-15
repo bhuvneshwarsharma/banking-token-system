@@ -1,5 +1,6 @@
 package bankcustomer
 
+import bankcustomer.constant.ServiceType
 import grails.converters.JSON
 
 class ServiceCounterService {
@@ -10,9 +11,11 @@ class ServiceCounterService {
         serviceCounters as JSON
     }
 
-    def getTokensForServiceCounter(String name) {
+    def getTokensForServiceCounter(String serviceType) {
 
-        def customerTokens = bankcustomer.ServiceCounter.findByName(name)?.customerToken
-        customerTokens? customerTokens as JSON : null
+        String serviceTypeS = ServiceType.getserviceType(serviceType)
+        if(!serviceTypeS)return "Bank does not support service ${serviceType}"
+        def customerTokens = CustomerToken.findByServiceType(serviceTypeS)
+        customerTokens? customerTokens as JSON : "No tokens found found for service ${serviceType}"
     }
 }

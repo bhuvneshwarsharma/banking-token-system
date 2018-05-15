@@ -34,22 +34,23 @@ class ServiceCounterController {
      */
     @ApiOperation(
             value = 'Get list of tokens for service counter',
-            nickname = 'serviceCounter/{counterName}/tokens',
+            nickname = 'serviceCounter/{serviceType}/tokens',
             produces = 'application/json',
             consumes = 'application/json',
             httpMethod = 'GET'
     )
     @ApiImplicitParams([
-            @ApiImplicitParam(name = "counterName",
+            @ApiImplicitParam(name = "serviceType",
                     paramType = "path",
                     required = true,
-                    value = "Counter Name",
+                    value = "Service Type",
                     dataType = "string"
             )
     ])
     def getTokensForServiceCounter() {
 
-        String serviceCounterName = params.counterName
-        render serviceCounterService.getTokensForServiceCounter(serviceCounterName)
+        String serviceType = params.serviceType
+        def tokens = serviceCounterService.getTokensForServiceCounter(serviceType)
+        render tokens
     }
 }

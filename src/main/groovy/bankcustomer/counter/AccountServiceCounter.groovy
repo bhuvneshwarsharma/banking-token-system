@@ -1,28 +1,23 @@
 package bankcustomer.counter;
 
-import bankcustomer.CustomerToken;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import bankcustomer.CustomerToken
 
 /**
  * Created by bhuvneshwars on 14/5/18.
  */
-public class EnquieryServiceCounter implements IServiceCounter{
+public class AccountServiceCounter implements IServiceCounter{
 
     Map<String, Queue<CustomerToken>> tokenTaskList= new HashMap<String, Queue<CustomerToken>>();
-    static EnquieryServiceCounter enquieryServiceCounter = null;
+    static AccountServiceCounter accountServiceCounter = null;
 
-    private EnquieryServiceCounter() { }
+    private AccountServiceCounter() { }
 
-    public static EnquieryServiceCounter getInstance() {
+    public static AccountServiceCounter getInstance() {
 
-        if(enquieryServiceCounter==null)
-            enquieryServiceCounter = new EnquieryServiceCounter();
+        if(accountServiceCounter==null)
+            accountServiceCounter = new AccountServiceCounter();
 
-        return enquieryServiceCounter;
+        return accountServiceCounter;
     }
 
     @Override
